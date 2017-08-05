@@ -181,7 +181,7 @@
 		UpdateScaleform(): void;
 	}
 
-	class UIMenuCheckboxItem extends NativeUI.UIMenuItem {
+	class UIMenuCheckboxItem {
 		Checked: boolean;
 		CheckboxEvent: IEvent<(sender: NativeUI.UIMenuCheckboxItem, Checked: boolean) => void>;
 		constructor(text: string, check: boolean);
@@ -194,7 +194,7 @@
 		SetRightLabel(text: string): void;
 	}
 
-	class UIMenuColoredItem extends NativeUI.UIMenuItem {
+	class UIMenuColoredItem {
 		MainColor: System.Drawing.Color;
 		HighlightColor: System.Drawing.Color;
 		TextColor: System.Drawing.Color;
@@ -226,7 +226,7 @@
 		SetRightLabel(text: string): void;
 	}
 
-	class UIMenuListItem extends NativeUI.UIMenuItem {
+	class UIMenuListItem {
 		Index: number;
 		List: System.Collections.Generic.List<any>;
 		OnListChanged: IEvent<(sender: NativeUI.UIMenuListItem, newIndex: number) => void>;

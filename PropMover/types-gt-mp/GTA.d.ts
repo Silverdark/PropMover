@@ -986,7 +986,7 @@
 		LandingOrFallingToDoom = 3
 	}
 
-	class Ped extends GTA.Entity {
+	class Ped {
 		Money: number;
 		readonly Gender: GTA.Gender;
 		MaxHealth: number;
@@ -1889,7 +1889,7 @@
 		Yoga01AMY = 2869588309
 	}
 
-	class Prop extends GTA.Entity {
+	class Prop {
 		constructor(handle: number);
 	}
 
@@ -2096,7 +2096,7 @@
 		Close(repeat: boolean): void;
 	}
 
-	class Vehicle extends GTA.Entity {
+	class Vehicle {
 		readonly DisplayName: string;
 		readonly FriendlyName: string;
 		readonly ClassDisplayName: string;

@@ -1,6 +1,6 @@
 ﻿declare namespace System.Collections.Generic {
 
-	class Dictionary<TKey, TValue> implements System.Collections.IDictionary {
+	class Dictionary<TKey, TValue> {
 		readonly Comparer: any;
 		readonly Count: number;
 		readonly Keys: any;
@@ -27,7 +27,7 @@
 		GetEnumerator(): any;
 	}
 
-	class List<T> implements System.Collections.IList {
+	class List<T> {
 		Capacity: number;
 		readonly Count: number;
 		Item: any;
