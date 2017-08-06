@@ -62,7 +62,7 @@ namespace PropMover
             _attachedObject = API.createObject(_model, new Vector3(), new Vector3());
             UpdateObject(player);
 
-            API.sendChatMessageToPlayer(player, $"Set prop to {model}");
+            API.sendChatMessageToPlayer(player, "Set prop to " + model);
         }
 
         [Command("setbone")]
@@ -71,7 +71,25 @@ namespace PropMover
             _bone = bone;
             UpdateObject(player);
 
-            API.sendChatMessageToPlayer(player, $"Set bone to {bone}");
+            API.sendChatMessageToPlayer(player, "Set bone to " + bone);
+        }
+
+        [Command("setposition")]
+        public void SetPosition(Client player, float x, float y, float z)
+        {
+            _position = new Vector3(x, y, z);
+            UpdateObject(player);
+
+            API.sendChatMessageToPlayer(player, "Set position to " + _position);
+        }
+
+        [Command("setrotation")]
+        public void SetRotation(Client player, float x, float y, float z)
+        {
+            _rotation = new Vector3(x, y, z);
+            UpdateObject(player);
+
+            API.sendChatMessageToPlayer(player, "Set rotation to " + _rotation);
         }
 
         [Command("setmoveunit")]
@@ -80,7 +98,7 @@ namespace PropMover
             _moveUnit = units;
             UpdateObject(player);
 
-            API.sendChatMessageToPlayer(player, $"Set move unit to {units}");
+            API.sendChatMessageToPlayer(player, "Set move unit to " + units);
         }
 
         [Command("setrotateunit")]
@@ -89,7 +107,7 @@ namespace PropMover
             _rotateUnit = units;
             UpdateObject(player);
 
-            API.sendChatMessageToPlayer(player, $"Set rotate unit to {units}");
+            API.sendChatMessageToPlayer(player, "Set rotate unit to " + units);
         }
 
         [Command("resetposition")]
@@ -113,15 +131,15 @@ namespace PropMover
         [Command("printprop")]
         public void PrintPropPositionAndRotation(Client player)
         {
-            API.sendChatMessageToPlayer(player, $"Prop model: {_model}");
-            API.sendChatMessageToPlayer(player, $"Bone: {_bone}");
-            API.sendChatMessageToPlayer(player, $"Position: {_position}");
-            API.sendChatMessageToPlayer(player, $"Rotation: {_rotation}");
+            API.sendChatMessageToPlayer(player, "Prop model: " + _model);
+            API.sendChatMessageToPlayer(player, "Bone: " + _bone);
+            API.sendChatMessageToPlayer(player, "Position: " + _position);
+            API.sendChatMessageToPlayer(player, "Rotation: " + _rotation);
 
-            API.consoleOutput($"Prop model: {_model}");
-            API.consoleOutput($"Bone: {_bone}");
-            API.consoleOutput($"Position: {_position}");
-            API.consoleOutput($"Rotation: {_rotation}");
+            API.consoleOutput("Prop model: " + _model);
+            API.consoleOutput("Bone: " + _bone);
+            API.consoleOutput("Position: " + _position);
+            API.consoleOutput("Rotation: " + _rotation);
         }
 
         [Command("playanimation")]
@@ -131,7 +149,7 @@ namespace PropMover
                 (int) (AnimationFlags.AllowPlayerControl | AnimationFlags.Loop | AnimationFlags.OnlyAnimateUpperBody |
                        AnimationFlags.Cancellable), animDict, animName);
 
-            API.sendChatMessageToPlayer(player, $"Played animation {animDict} - {animName}");
+            API.sendChatMessageToPlayer(player, "Playing animation " + animDict + " - " + animName);
         }
 
         [Command("stopanimation")]
@@ -139,7 +157,7 @@ namespace PropMover
         {
             API.stopPlayerAnimation(player);
 
-            API.sendChatMessageToPlayer(player, "Stopped animation");
+            API.sendChatMessageToPlayer(player, "Stopping animation");
         }
 
         #endregion

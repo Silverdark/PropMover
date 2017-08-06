@@ -1,6 +1,6 @@
 ﻿<meta>
   <info name="Prop Mover" description="Moves props and playes animations" author="Silverdark" version="1.0" shadowcopy="true" />
 
-  <script src="PropMover.dll" type="server" lang="compiled" />
+  <script src="PropMover.cs" type="server" lang="csharp" />
   <script src="PropMoverClient.js" type="client" lang="javascript" />
 </meta>
